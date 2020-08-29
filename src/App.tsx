@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import RenderTree from './Components/RenderTree';
+import familyTree from './asset/data';
+import { Person } from './asset/dataTypes';
+
+const data = familyTree as Person[];
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+  //validate data
+  let validateTreeData = {ok:true,message:"Success"};
+
+  if (validateTreeData.ok) {
+    return (
+      <div className="App">
+        <h1 >Family tree</h1>
+        <RenderTree initialTree={data} />
+      </div>
+    );
+  }
+  else {
+    return (
+      <div className="App">
+        <h1>Error validating Dataset</h1>
+        <p style={{ color: "red" }}>
+          {validateTreeData.message}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      </div>)
+  }
 }
 
 export default App;
+
