@@ -1,13 +1,13 @@
 import React from 'react';
 import RenderTree from './Components/RenderTree';
 import familyTree from './asset/data';
-import { Person } from './asset/dataTypes';
+import { Person, validate } from './asset/dataTypes';
 
 const data = familyTree as Person[];
 
 function App() {
   //validate data
-  let validateTreeData = {ok:true,message:"Success"};
+  let validateTreeData = validate(data);
 
   if (validateTreeData.ok) {
     return (
