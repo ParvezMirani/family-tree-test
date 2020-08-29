@@ -2,3 +2,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 npm install
 npm run start 
 
+![name-of-you-image](https://github.com/ParvezMirani/family-tree-test/blob/master/Familytree.PNG)
